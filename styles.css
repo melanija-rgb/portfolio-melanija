@@ -475,6 +475,29 @@ a.project-card:focus-visible .project-thumb img {
   max-width: 36rem;
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.work-card {
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.work-card h3 {
+  font-size: 1.85rem;
+  margin-bottom: 0.55rem;
+}
+
+.work-card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
 .contact {
   text-align: center;
   padding-bottom: 6rem;
@@ -508,7 +531,8 @@ a.project-card:focus-visible .project-thumb img {
 
 @media (max-width: 760px) {
   .project-grid,
-  .about {
+  .about,
+  .work-grid {
     grid-template-columns: 1fr;
   }
 
