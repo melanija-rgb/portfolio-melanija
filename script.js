@@ -33,3 +33,74 @@ if (portraitImg) {
     markMissing();
   }
 }
+
+const modal = document.querySelector("#kontakt-modal");
+const openers = document.querySelectorAll("[data-open-modal]");
+const form = document.querySelector(".kontakt-form");
+const statusEl = document.querySelector(".form-status");
+let lastFocus = null;
+
+function openModal() {
+  if (!modal) {
+    return;
+  }
+  lastFocus = document.activeElement;
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
+  const first = modal.querySelector("input:not([name='bot-field'])");
+  first?.focus();
+}
+
+function closeModal() {
+  if (!modal) {
+    return;
+  }
+  modal.hidden = true;
+  document.body.classList.remove("modal-open");
+  lastFocus?.focus();
+}
+
+openers.forEach((btn) => {
+  btn.addEventListener("click", openModal);
+});
+
+modal?.querySelectorAll("[data-close-modal]").forEach((el) => {
+  el.addEventListener("click", closeModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal && !modal.hidden) {
+    closeModal();
+  }
+});
+
+form?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!statusEl) {
+    return;
+  }
+
+  statusEl.hidden = false;
+  statusEl.classList.remove("is-error");
+  statusEl.textContent = "Šaljem...";
+
+  try {
+    const body = new URLSearchParams(new FormData(form)).toString();
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+    });
+
+    if (!response.ok) {
+      throw new Error("send-failed");
+    }
+
+    form.reset();
+    statusEl.textContent = "Hvala. Javit ću se uskoro.";
+  } catch {
+    statusEl.classList.add("is-error");
+    statusEl.textContent = "Poruka nije poslata. Pokušajte ponovo.";
+  }
+});
+

@@ -519,6 +519,114 @@ a.project-card:focus-visible .project-thumb img {
   color: var(--muted);
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.42);
+}
+
+.modal-window {
+  position: relative;
+  z-index: 1;
+  width: min(32rem, 100%);
+  max-height: calc(100vh - 2.5rem);
+  overflow: auto;
+  padding: 2rem 1.5rem 1.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.modal-window h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.kontakt-form {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.kontakt-form label {
+  display: grid;
+  gap: 0.4rem;
+  text-align: left;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: 2px solid var(--hover);
+  outline-offset: 1px;
+}
+
+.kontakt-form .btn {
+  margin-top: 0.35rem;
+  width: 100%;
+}
+
+.form-status {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.form-status.is-error {
+  color: #9a3d4d;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;

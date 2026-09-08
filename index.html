@@ -204,15 +204,14 @@
 
       <section class="section contact" id="kontakt">
         <div class="section-heading">
-          <p class="eyebrow">Kontakt</p>
-          <h2>Recite mi šta vam treba</h2>
+          <h2>Kontakt</h2>
         </div>
         <p class="contact-lead">
-          Ako vam treba stranica ili dizajn za mali biznis, pišite. Odgovaram
-          brzo i jednostavno.
+          Imate ideju za svoju web stranicu? Kontaktirajte me.
         </p>
-        <a class="btn" href="mailto:hello@melanija.com">Pošalji poruku</a>
-        <p class="contact-note">Email ćemo zamijeniti tvojom pravom adresom.</p>
+        <button class="btn" type="button" data-open-modal="kontakt-modal">
+          Pošalji poruku
+        </button>
       </section>
     </main>
 
@@ -220,6 +219,53 @@
       <p>© <span id="godina"></span> Melanija</p>
       <a href="#pocetak">Nazad na vrh</a>
     </footer>
+
+    <div
+      class="modal"
+      id="kontakt-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="kontakt-modal-title"
+      hidden
+    >
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-window">
+        <button class="modal-close" type="button" data-close-modal aria-label="Zatvori">
+          ×
+        </button>
+        <h2 id="kontakt-modal-title">Pošalji poruku</h2>
+        <form
+          class="kontakt-form"
+          name="kontakt"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="kontakt" />
+          <p class="honeypot">
+            <label>Ne popunjavajte ovo <input name="bot-field" /></label>
+          </p>
+          <label>
+            Ime i prezime
+            <input type="text" name="ime" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            Broj telefona
+            <input type="tel" name="telefon" autocomplete="tel" required />
+          </label>
+          <label>
+            Poruka
+            <textarea name="poruka" rows="5" required></textarea>
+          </label>
+          <button class="btn" type="submit">Pošalji poruku</button>
+          <p class="form-status" hidden></p>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
