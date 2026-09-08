@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melanija — Web dizajn za male biznise</title>
+    <meta
+      name="description"
+      content="Melanija — web dizajn za male biznise. Jednostavne, profesionalne stranice i dizajn."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-art" aria-hidden="true">
+      <span class="wash wash-top"></span>
+      <span class="blob blob-hero"></span>
+      <span class="blob blob-about"></span>
+    </div>
+    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+
+    <header class="site-header">
+      <a class="logo" href="#pocetak">Melanija</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni">
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Meni</span>
+      </button>
+      <nav id="glavni-meni" class="nav" aria-label="Glavna navigacija">
+        <a href="#projekti">Projekti</a>
+        <a href="#usluge">Usluge</a>
+        <a href="#o-meni">O meni</a>
+        <a class="nav-cta" href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main id="sadrzaj">
+      <section class="hero" id="pocetak">
+        <p class="eyebrow">Web dizajn za male biznise</p>
+        <h1 class="hero-name">Melanija</h1>
+        <p class="hero-lead">
+          Jednostavne, jasne stranice za ljude koji žele da njihov biznis izgleda
+          profesionalno.
+        </p>
+        <a class="btn" href="#projekti">Pogledaj projekte</a>
+      </section>
+
+      <section class="section" id="projekti">
+        <div class="section-heading">
+          <p class="eyebrow">Odabrani radovi</p>
+          <h2>Moji projekti</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true"></div>
+            <p class="project-meta">Web stranica</p>
+            <h3>Projekat 01</h3>
+            <p>Ovdje dolazi kratki opis prvog projekta — šta si radila i za koga.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true"></div>
+            <p class="project-meta">Dizajn</p>
+            <h3>Projekat 02</h3>
+            <p>Drugi projekat. Kasnije mijenjamo naslov, sliku i tekst.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true"></div>
+            <p class="project-meta">Web stranica</p>
+            <h3>Projekat 03</h3>
+            <p>Treći projekat. Dovoljno je 3 do 4 rada da klijent vidi stil.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band" id="usluge">
+        <div class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Usluge</p>
+            <h2>Šta mogu za vas</h2>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <span class="service-index">01</span>
+              <h3>Web stranice</h3>
+              <p>
+                Mala, uredna stranica koja kaže ko ste, šta nudite i kako vas
+                kontaktirati. Bez suvišnih stranica i komplikacija.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">02</span>
+              <h3>Dizajn</h3>
+              <p>
+                Vizualni smjer, layout i detalji — da sve izgleda usklađeno,
+                čitljivo i prepoznatljivo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="o-meni">
+        <div class="portrait" aria-hidden="false">
+          <img
+            src="images/profil.jpg"
+            alt="Portret Melanije"
+            width="640"
+            height="800"
+          />
+          <div class="portrait-fallback">
+            <span>M</span>
+            <p>Dodaj sliku u<br /><code>images/profil.jpg</code></p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">O meni</p>
+          <h2>Dizajn koji malim biznisima stoji</h2>
+          <p>
+            Ovdje pišemo tvoju priču — kratko, ljudski, bez pretjerivanja. Ko si,
+            kome pomažeš i zašto klijent može da ti vjeruje.
+          </p>
+          <p>
+            Jedan ili dva pasusa su dovoljna. Klijenti žele da osjete osobu iza
+            rada, ne dugu biografiju.
+          </p>
+        </div>
+      </section>
+
+      <section class="section contact" id="kontakt">
+        <div class="section-heading">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Recite mi šta vam treba</h2>
+        </div>
+        <p class="contact-lead">
+          Ako vam treba stranica ili dizajn za mali biznis, pišite. Odgovaram
+          brzo i jednostavno.
+        </p>
+        <a class="btn" href="mailto:hello@melanija.com">Pošalji poruku</a>
+        <p class="contact-note">Email ćemo zamijeniti tvojom pravom adresom.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="godina"></span> Melanija</p>
+      <a href="#pocetak">Nazad na vrh</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
