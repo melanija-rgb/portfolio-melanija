@@ -261,11 +261,20 @@ p {
   font-size: clamp(4.2rem, 16vw, 10.5rem);
   letter-spacing: -0.035em;
   line-height: 0.85;
-  margin: 0.15em 0 0.35em;
+  margin: 0 0 0.28em;
+}
+
+.hero-tagline {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 0.7rem;
 }
 
 .hero-lead {
   max-width: 34rem;
+  font-size: 0.98rem;
   color: var(--muted);
   margin-bottom: 2rem;
 }
