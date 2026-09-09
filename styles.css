@@ -439,6 +439,8 @@ a.project-card:focus-visible .project-thumb img {
   position: relative;
   width: 100%;
   max-width: 260px;
+  justify-self: center;
+  margin-inline: auto;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--radius);
