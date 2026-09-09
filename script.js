@@ -86,7 +86,7 @@ form?.addEventListener("submit", async (event) => {
 
   try {
     const body = new URLSearchParams(new FormData(form)).toString();
-    const response = await fetch("/", {
+    const response = await fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Melanija</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="admin">
+      <section class="panel login" id="login-panel">
+        <p class="eyebrow">Admin</p>
+        <h1>Prijava</h1>
+        <form id="login-form">
+          <label>
+            Lozinka
+            <input type="password" name="password" autocomplete="current-password" required />
+          </label>
+          <button class="btn" type="submit">Prijavi se</button>
+          <p class="status" id="login-status" hidden></p>
+        </form>
+      </section>
+
+      <section class="inbox" id="inbox-panel" hidden>
+        <header class="inbox-head">
+          <div>
+            <p class="eyebrow">Admin</p>
+            <h1>Poruke</h1>
+          </div>
+          <div class="inbox-actions">
+            <p class="unread" id="unread-count">0 nepročitanih</p>
+            <button class="btn ghost" type="button" id="logout-btn">Odjava</button>
+          </div>
+        </header>
+        <p class="status" id="inbox-status" hidden></p>
+        <div class="list" id="message-list"></div>
+      </section>
+    </main>
+    <script src="admin.js?v=5"></script>
+  </body>
+</html>
