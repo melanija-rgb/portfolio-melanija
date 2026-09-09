@@ -180,6 +180,40 @@ p {
   font-family: var(--serif);
   font-size: 1.35rem;
   font-weight: 600;
+  margin-right: auto;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.22rem;
+}
+
+.lang-switch button {
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0;
+  border: 1px solid #222;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lang-switch button:hover,
+.lang-switch button:focus-visible,
+.lang-switch button[aria-pressed="true"] {
+  background: rgba(34, 34, 34, 0.06);
 }
 
 .nav {
@@ -654,15 +688,19 @@ body.modal-open {
     overflow: visible;
   }
 
+  .header-tools {
+    order: 1;
+  }
+
   .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
   }
 
   .nav {
     display: none;
+    order: 2;
     position: static;
     width: 100%;
     flex-basis: 100%;

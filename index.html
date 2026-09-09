@@ -23,35 +23,42 @@
       <span class="blob blob-hero"></span>
       <span class="blob blob-about"></span>
     </div>
-    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+    <a class="skip-link" href="#sadrzaj" data-i18n="skip">Preskoči na sadržaj</a>
 
     <header class="site-header">
       <a class="logo" href="#pocetak">Melanija</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni">
-        <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Meni</span>
-      </button>
-      <nav id="glavni-meni" class="nav" aria-label="Glavna navigacija">
-        <a href="#projekti">Moji projekti</a>
-        <a href="#o-meni">O meni</a>
-        <a class="nav-cta" href="#kontakt">Kontakt</a>
+      <nav id="glavni-meni" class="nav" aria-label="Glavna navigacija" data-i18n-aria="navAria">
+        <a href="#projekti" data-i18n="navProjects">Moji projekti</a>
+        <a href="#o-meni" data-i18n="navAbout">O meni</a>
+        <a class="nav-cta" href="#kontakt" data-i18n="navContact">Kontakt</a>
       </nav>
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Jezik" data-i18n-aria="langs">
+          <button type="button" data-lang="sr" aria-pressed="true">SR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni">
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only" data-i18n="menu">Meni</span>
+        </button>
+      </div>
     </header>
 
     <main id="sadrzaj">
       <section class="hero" id="pocetak">
         <h1 class="hero-name">Melanija</h1>
-        <p class="hero-tagline">Web dizajn za vaš biznis</p>
-        <p class="hero-lead">
+        <p class="hero-tagline" data-i18n="tagline">Web dizajn za vaš biznis</p>
+        <p class="hero-lead" data-i18n="lead">
           Moderne i jednostavne web stranice koje predstavljaju vaš biznis na
           pravi način.
         </p>
-        <a class="btn" href="#projekti">Pogledaj moje radove</a>
+        <a class="btn" href="#projekti" data-i18n="seeWork">Pogledaj moje radove</a>
       </section>
 
       <section class="section" id="projekti">
         <div class="section-heading">
-          <h2>Moji projekti</h2>
+          <h2 data-i18n="projects">Moji projekti</h2>
         </div>
         <div class="project-grid">
           <a
@@ -64,11 +71,12 @@
               <img
                 src="images/projects/branko.png"
                 alt="Web stranica Branko Krivokuća"
+                data-i18n-alt="altBranko"
                 width="1440"
                 height="900"
               />
             </div>
-            <p class="project-meta">Web stranica</p>
+            <p class="project-meta" data-i18n="website">Web stranica</p>
             <h3>Branko Krivokuća</h3>
           </a>
           <a
@@ -81,11 +89,12 @@
               <img
                 src="images/projects/tetovaze-raso.png"
                 alt="Web stranica Tetovaže Raso"
+                data-i18n-alt="altRaso"
                 width="1440"
                 height="900"
               />
             </div>
-            <p class="project-meta">Web stranica</p>
+            <p class="project-meta" data-i18n="website">Web stranica</p>
             <h3>Tetovaže Raso</h3>
           </a>
           <a
@@ -98,11 +107,12 @@
               <img
                 src="images/projects/elitte-bella-italia.png"
                 alt="Web stranica Elitte Bella Italia"
+                data-i18n-alt="altElitte"
                 width="1440"
                 height="900"
               />
             </div>
-            <p class="project-meta">Web stranica</p>
+            <p class="project-meta" data-i18n="website">Web stranica</p>
             <h3>Elitte Bella Italia</h3>
           </a>
           <a
@@ -115,11 +125,12 @@
               <img
                 src="images/projects/paradiso.png"
                 alt="Web stranica Paradiso Caffe and Playroom"
+                data-i18n-alt="altParadiso"
                 width="1440"
                 height="900"
               />
             </div>
-            <p class="project-meta">Web stranica</p>
+            <p class="project-meta" data-i18n="website">Web stranica</p>
             <h3>Paradiso Caffe &amp; Playroom</h3>
           </a>
         </div>
@@ -130,6 +141,7 @@
           <img
             src="images/profil.jpg"
             alt="Portret Melanije"
+            data-i18n-alt="altPortrait"
             width="640"
             height="800"
           />
@@ -139,16 +151,16 @@
           </div>
         </div>
         <div class="about-copy">
-          <p class="eyebrow">O meni</p>
-          <p>
+          <p class="eyebrow" data-i18n="about">O meni</p>
+          <p data-i18n="about1">
             Ja sam Melanija – web dizajnerka koja voli da jednostavne stvari
             izgledaju lijepo.
           </p>
-          <p>
+          <p data-i18n="about2">
             Izrađujem moderne i funkcionalne web stranice za male biznise,
             prilagođene njihovom stilu i potrebama.
           </p>
-          <p>
+          <p data-i18n="about3">
             Volim kad je stranica pregledna i jednostavna za korištenje, ali
             istovremeno ostavlja dobar prvi utisak.
           </p>
@@ -157,20 +169,20 @@
 
       <section class="section" id="sta-radim">
         <div class="section-heading">
-          <h2>Šta radim</h2>
+          <h2 data-i18n="whatIDo">Šta radim</h2>
         </div>
         <div class="work-grid">
           <article class="work-card">
-            <h3>Web stranice</h3>
-            <p>Moderne, pregledne i prilagođene svim uređajima.</p>
+            <h3 data-i18n="workWeb">Web stranice</h3>
+            <p data-i18n="workWebText">Moderne, pregledne i prilagođene svim uređajima.</p>
           </article>
           <article class="work-card">
-            <h3>Dizajn</h3>
-            <p>Jednostavan i pažljivo prilagođen vašem biznisu.</p>
+            <h3 data-i18n="workDesign">Dizajn</h3>
+            <p data-i18n="workDesignText">Jednostavan i pažljivo prilagođen vašem biznisu.</p>
           </article>
           <article class="work-card">
-            <h3>Funkcionalnosti</h3>
-            <p>
+            <h3 data-i18n="workFeatures">Funkcionalnosti</h3>
+            <p data-i18n="workFeaturesText">
               Galerija, kontakt, Google Maps, rezervacije i drugo — po dogovoru.
             </p>
           </article>
@@ -179,12 +191,12 @@
 
       <section class="section contact" id="kontakt">
         <div class="section-heading">
-          <h2>Kontakt</h2>
+          <h2 data-i18n="contact">Kontakt</h2>
         </div>
-        <p class="contact-lead">
+        <p class="contact-lead" data-i18n="contactLead">
           Imate ideju za svoju web stranicu? Kontaktirajte me.
         </p>
-        <button class="btn" type="button" data-open-modal="kontakt-modal">
+        <button class="btn" type="button" data-open-modal="kontakt-modal" data-i18n="sendMessage">
           Pošalji poruku
         </button>
       </section>
@@ -193,7 +205,7 @@
     <footer class="site-footer">
       <p>© <span id="godina"></span> Melanija</p>
       <a class="to-top" href="#pocetak">
-        <span class="to-top-label">Nazad na vrh</span>
+        <span class="to-top-label" data-i18n="backToTop">Nazad na vrh</span>
         <span class="to-top-arrow" aria-hidden="true">↑</span>
       </a>
     </footer>
@@ -208,10 +220,10 @@
     >
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-window">
-        <button class="modal-close" type="button" data-close-modal aria-label="Zatvori">
+        <button class="modal-close" type="button" data-close-modal aria-label="Zatvori" data-i18n-aria="close">
           ×
         </button>
-        <h2 id="kontakt-modal-title">Pošalji poruku</h2>
+        <h2 id="kontakt-modal-title" data-i18n="formTitle">Pošalji poruku</h2>
         <form
           class="kontakt-form"
           name="kontakt"
@@ -221,25 +233,25 @@
         >
           <input type="hidden" name="form-name" value="kontakt" />
           <p class="honeypot">
-            <label>Ne popunjavajte ovo <input name="bot-field" /></label>
+            <label><span data-i18n="honeypot">Ne popunjavajte ovo</span> <input name="bot-field" /></label>
           </p>
           <label>
-            Ime i prezime
+            <span data-i18n="name">Ime i prezime</span>
             <input type="text" name="ime" autocomplete="name" required />
           </label>
           <label>
-            Email
+            <span data-i18n="email">Email</span>
             <input type="email" name="email" autocomplete="email" required />
           </label>
           <label>
-            Broj telefona
+            <span data-i18n="phone">Broj telefona</span>
             <input type="tel" name="telefon" autocomplete="tel" required />
           </label>
           <label>
-            Poruka
+            <span data-i18n="message">Poruka</span>
             <textarea name="poruka" rows="5" required></textarea>
           </label>
-          <button class="btn" type="submit">Pošalji poruku</button>
+          <button class="btn" type="submit" data-i18n="sendMessage">Pošalji poruku</button>
           <p class="form-status" hidden></p>
         </form>
       </div>
