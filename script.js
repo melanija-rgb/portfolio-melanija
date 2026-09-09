@@ -38,26 +38,53 @@ const modal = document.querySelector("#kontakt-modal");
 const openers = document.querySelectorAll("[data-open-modal]");
 const form = document.querySelector(".kontakt-form");
 const statusEl = document.querySelector(".form-status");
+const modalMotionMs = 220;
 let lastFocus = null;
+let modalTimer = null;
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 function openModal() {
   if (!modal) {
     return;
   }
   lastFocus = document.activeElement;
+  if (modalTimer) {
+    clearTimeout(modalTimer);
+    modalTimer = null;
+  }
   modal.hidden = false;
   document.body.classList.add("modal-open");
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      modal.classList.add("is-visible");
+    });
+  });
   const first = modal.querySelector("input:not([name='bot-field'])");
   first?.focus();
 }
 
 function closeModal() {
-  if (!modal) {
+  if (!modal || modal.hidden) {
     return;
   }
-  modal.hidden = true;
-  document.body.classList.remove("modal-open");
-  lastFocus?.focus();
+  modal.classList.remove("is-visible");
+  const finish = () => {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    lastFocus?.focus();
+    modalTimer = null;
+  };
+  if (prefersReducedMotion()) {
+    finish();
+    return;
+  }
+  if (modalTimer) {
+    clearTimeout(modalTimer);
+  }
+  modalTimer = setTimeout(finish, modalMotionMs);
 }
 
 openers.forEach((btn) => {

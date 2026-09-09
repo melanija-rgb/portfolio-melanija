@@ -559,10 +559,16 @@ a.project-card:focus-visible .project-thumb img {
   display: grid;
   place-items: center;
   padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.22s ease;
 }
 
 .modal[hidden] {
   display: none;
+}
+
+.modal.is-visible {
+  opacity: 1;
 }
 
 .modal-backdrop {
@@ -581,6 +587,12 @@ a.project-card:focus-visible .project-thumb img {
   background: var(--bg-card);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
+  transform: translateY(8px);
+  transition: transform 0.22s ease;
+}
+
+.modal.is-visible .modal-window {
+  transform: none;
 }
 
 .modal-window h2 {
@@ -701,7 +713,7 @@ body.modal-open {
   }
 
   .nav {
-    display: none;
+    display: flex;
     order: 2;
     position: static;
     width: 100%;
@@ -709,12 +721,35 @@ body.modal-open {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 0.35rem 0 0.85rem;
+    padding: 0;
     background: var(--accent);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-0.35rem);
+    transition:
+      max-height 0.22s ease,
+      opacity 0.2s ease,
+      transform 0.22s ease,
+      padding 0.22s ease,
+      visibility 0s linear 0.22s;
   }
 
   .nav.is-open {
-    display: flex;
+    max-height: 16rem;
+    padding: 0.35rem 0 0.85rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition:
+      max-height 0.22s ease,
+      opacity 0.2s ease,
+      transform 0.22s ease,
+      padding 0.22s ease,
+      visibility 0s;
   }
 
   .nav a {
@@ -769,5 +804,15 @@ body.modal-open {
     font-size: 1.35rem;
     line-height: 1;
     color: var(--text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .nav.is-open,
+  .modal,
+  .modal-window {
+    transition: none;
+    transform: none;
   }
 }
