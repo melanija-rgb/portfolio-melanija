@@ -170,9 +170,9 @@ const translations = {
     navAbout: "About",
     navContact: "Contact",
     tagline: "Web design for your business",
-    lead: "Clean, modern websites that present your business in the right light.",
+    lead: "Clean, modern websites that show your business at its best.",
     seeWork: "See my work",
-    projects: "Work",
+    projects: "My work",
     website: "Website",
     altBranko: "Website for Branko Krivokuća",
     altRaso: "Website for Tetovaže Raso",
@@ -183,12 +183,12 @@ const translations = {
     about1:
       "I'm Melanija, a web designer who likes keeping things simple — and making them look good.",
     about2:
-      "I build modern, practical websites for small businesses, shaped around their style and what they actually need.",
+      "I build modern, practical websites for small businesses, tailored to their style and what they actually need.",
     about3:
-      "I like a site that's easy to find your way around, and still makes a strong first impression.",
+      "I like websites that are easy to navigate and still make a strong first impression.",
     whatIDo: "What I do",
     workWeb: "Websites",
-    workWebText: "Modern, clear, and at home on every screen.",
+    workWebText: "Modern, clear, and responsive on every screen.",
     workDesign: "Design",
     workDesignText: "Simple, considered, and tailored to your business.",
     workFeatures: "Features",
